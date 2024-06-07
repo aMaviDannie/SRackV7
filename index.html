@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Listing App</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .slot { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+    .actions button { margin-right: 5px; }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    #header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-bottom: 1px solid #ddd;
+    }
+    #stats-container {
+      display: flex;
+      gap: 20px;
+    }
+    #stats-container div {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>DANNIE Stencil Rack Application</h1>
+
+  <!-- Header for stats display -->
+  <div id="header">
+    <div id="stats-container">
+      <div>Total Slots: <span id="total-slots">0</span></div>
+      <div>Empty Slots: <span id="empty-slots">0</span></div>
+      <div>In Use Slots: <span id="in-use-slots">0</span></div>
+      <div>Not in Use Slots: <span id="not-in-use-slots">0</span></div>
+    </div>
+  </div>
+
+  <div>
+    <input type="text" id="search-input" placeholder="Search projects">
+    <button id="search-btn">Search</button>
+  </div>
+  <button id="add-project-btn">Add Project</button>
+  <button id="delete-last-project-btn">Delete Last Project</button>
+  <div id="slots-container"></div>
+
+  <!-- Input Modal -->
+  <div id="inputModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" style="color:red; float:right; cursor:pointer;">&times;</span>
+      <p id="modalMessage"></p>
+      <input type="text" id="modalInput">
+      <button id="modalOkBtn">OK</button>
+      <button id="modalCancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Alert Modal -->
+  <div id="alertModal" class="modal">
+    <div class="modal-content">
+      <p id="alertMessage"></p>
+      <button id="alertOkBtn">OK</button>
+    </div>
+  </div>
+
+  <!-- Confirm Modal -->
+  <div id="confirmModal" class="modal">
+    <div class="modal-content">
+      <p id="confirmMessage"></p>
+      <button id="confirmYesBtn">Yes</button>
+      <button id="confirmNoBtn">No</button>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
