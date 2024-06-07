@@ -16,7 +16,7 @@ Clone this repository to your local machine:
 git clone https://github.com/aMaviDannie/SRackV8
 cd your-repository
 
-### Install the Dependencies
+**Install the Dependencies**
 
 npm install
 
