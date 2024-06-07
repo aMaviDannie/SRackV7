@@ -1,5 +1,4 @@
 //Array to hold project slots and variable for search terms
-
 let slots = [];
 let searchTerm = '';
 
