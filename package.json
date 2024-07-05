@@ -1,16 +1,19 @@
 {
   "name": "my-electron-app",
   "version": "1.0.0",
+  "description": "Stencil project listing application build for DANNIE",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
   },
-  "dependencies": {
-    "electron": "^24.0.0"
+  "author": {
+    "name": "Alperen",
+    "email": "a.mavitas@dannie.cc"
   },
   "devDependencies": {
-    "electron-builder": "^23.0.0"
+    "electron": "^11.5.0",
+    "electron-builder": "^22.0.0"
   },
   "build": {
     "appId": "com.myapp.id",
@@ -24,12 +27,24 @@
       "package.json"
     ],
     "linux": {
+      "category": "Utility",
+      "maintainer": "Your Name <your.email@example.com>",
       "target": [
-        "AppImage",
-        "deb",
+        {
+          "target": "deb",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "assets/icons/StencilRackAppIcon.png"
+    },
+    "win": {
+      "target": [
+        "nsis",
         "zip"
       ],
-      "category": "Utility"
+      "icon": "assets/icons/icon.ico"
     }
   }
 }
