@@ -1,4 +1,4 @@
-# **My Electron Project**
+# **Smart Stencil Rack App**
 
 This is a project built with Electron for managing stencil rack to be used for a production area: named as a 'slots' at the program.
 
